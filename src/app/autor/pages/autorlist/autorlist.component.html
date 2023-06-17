@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="registro-info">
+    <table class="table table-hover">
+        <thead>
+          <tr class="tabla"  >
+            <th scope="col">#</th>
+            <th scope="col">Autor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let autor of autores; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td (click)=" trabajosAutor(autor)" class="spinner">
+                {{autor}}</td>
+          </tr>
+        </tbody>
+      </table>
+        <table class="table table-hover">
+            <thead>
+              <tr class="tabla"  >
+                <th scope="col">#</th>
+                <th scope="col">Obras aleatorias</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let random of random; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{random.title}}</td>
+              </tr>
+            </tbody>
+            <button [routerLink]="[ '/obras']" >Obras favoritas</button>
+          </table>
+
+</div>
+<div class="popup" id="popup" *ngIf="trabajos_aut.length>0"> 
+    <form class="transition">
+        <h2>{{name}}</h2>
+        <button (click)="closePopup()">Aceptar</button>
+        <button (click)="agregarFavorito(trabajos_aut[1]['title'], trabajos_aut[1]['lines'], trabajos_aut[1]['author'] )">Agregar a favorito</button>
+        <div class="radioseleccion">
+            <thead>
+                <tr class="tabla"  >
+                  <th scope="col">Obras realizadas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{trabajos_aut[1]["title"]}}</td>
+                </tr>
+   
+              </tbody>
+              <tbody>
+                <tr>
+                  <td >{{trabajos_aut[1]["lines"]}}</td>
+                </tr>
+   
+              </tbody>
+        </div>
+    </form>   
+</div>   

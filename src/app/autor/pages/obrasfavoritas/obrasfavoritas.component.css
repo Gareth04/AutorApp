@@ -1,0 +1,24 @@
+.registro-info{
+    display: flex;
+    height: 30vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:start;
+    padding: 40px;
+    background-color: #EEEEEE;
+
+}
+.table {
+    border-collapse:collapse;
+    width: 95%;
+    text-align: center;
+    height: 100%;
+}
+.table .tabla {
+    background-color: #49525E;
+    color: #EEEEEE; 
+    height: 50px;
+    font-family: 'Lato';
+    font-weight: 700;   
+}
